@@ -1,0 +1,23 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+.form__label{
+    padding-left: 8px;
+    font-size: 1.125rem;
+}
+.form__element{
+    margin: 8px;
+    padding: 8px;
+}
+.form__comment{
+    padding-bottom: 80px;
+}
+.form__button{
+    color: white;
+    background-color: cornflowerblue;
+    border: none;
+    border-radius: 5px;
+    width: 40%;
+}
