@@ -15,40 +15,52 @@ class App extends React.Component {
   };
 
   handleSubmit = (e) => {
+    e.preventDefault();
+    // let newComment = {
+    //   name: this.state.form.name,
+    //   message: this.state.form.comment
+    // }
+    // this.setState({
+    //   comments: this.state.comments.concat(newComment)
+    // })
     const newComments = [...this.state.comments, this.state.form];
     this.setState({
-      comments : newComments,
-    })
+        comments : newComments,
+      })
+      // {newComment.name}
     console.log(this.state.comments);
+    // console.log(newComment.message);
+
 };
 
   render() {
     return (
       <div className="form">
-        <label className="form__label">Say something</label>
-        <input
-          type="text"
-          placeholder="Your Name"
-          className="form__element"
-          name="name"
-          id="name"
-          value={this.state.name}
-          onChange={this.handleChange}
+        <h2 className="form__h2">Say something</h2>
+        <form action=""><input
+        type="text"
+        placeholder="Your Name"
+        className="form__element"
+        name="name"
+        id="name"
+        value={this.state.name}
+        onChange={this.handleChange}
         />
         <textarea
-          type="text"
-          placeholder="You Comment"
-          className="form__element form__comment"
-          id="comment"
-          value={this.state.comment}
-          onChange={this.handleChange}
+        type="text"
+        placeholder="You Comment"
+        className="form__element form__comment"
+        id="comment"
+        value={this.state.comment}
+        onChange={this.handleChange}
         />
         <input
-          type="submit"
-          value="Comment"
-          className="form__element form__button"
-          onClick={this.handleSubmit}
-        />
+        type="submit"
+        value="Comment"
+        className="form__element form__button"
+        onClick={this.handleSubmit}
+        /></form>
+
       </div>
     );
   }
